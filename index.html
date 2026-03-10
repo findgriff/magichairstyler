@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AirStyler 5-in-1 Magic Hair Styler — curl, straighten, volumise, wave, and smooth. Salon-quality results at £49.99 with free worldwide shipping.">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="AirStyler — The Ultimate 5-in-1 Magic Hair Styler">
+    <meta property="og:description" content="Salon-quality hair. Zero salon prices. Curl, straighten, volumise, wave, and smooth — all in one tool.">
+    <meta property="og:image" content="https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_001.jpg">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AirStyler — The Ultimate 5-in-1 Magic Hair Styler">
+    <meta name="twitter:description" content="Salon-quality hair. Zero salon prices.">
+    <meta name="twitter:image" content="https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_001.jpg">
+
+    <title>AirStyler — 5-in-1 Magic Hair Styler | Salon Quality at £49.99</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        /* Countdown Timer */
+        .countdown-bar {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            box-shadow: 0 8px 32px rgba(233, 30, 140, 0.35);
+            border-bottom: 3px solid #E91E8C;
+        }
+
+        .countdown-bar-label {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 900;
+            margin-bottom: 16px;
+            color: #E91E8C;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: pulse-glow 2s ease-in-out infinite, bounce-text 2s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(233, 30, 140, 0.6), 0 0 40px rgba(233, 30, 140, 0.3);
+            word-spacing: 4px;
+        }
+
+        .countdown-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-bar span {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .countdown-bar .time-value {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: #C9A84C;
+            display: block;
+            line-height: 1;
+            background: rgba(201, 168, 76, 0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 2px solid rgba(201, 168, 76, 0.3);
+            min-width: 80px;
+        }
+
+        .countdown-bar .time-label {
+            font-size: 0.85rem;
+            color: #aaa;
+            margin-top: 6px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .countdown-separator {
+            color: #E91E8C;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* Announcement Bar */
+        .announcement-bar {
+            background: #C9A84C;
+            color: #0a0a0a;
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .announcement-bar::before {
+            content: '🚚 Free Worldwide Shipping On Every Order  |  🔒 100% Secure Checkout — 30 Payment Methods Accepted  |  ⭐ Trusted by Thousands of Happy Customers  |  💳 Pay Your Way — Visa, Mastercard, PayPal, Klarna, Apple Pay & More  |  ✅ Full Refund Guarantee — Shop With Confidence  |  🎁 The Perfect Gift — Delivered in 3–6 Business Days  |  🚚 Free Worldwide Shipping On Every Order  |  🔒 100% Secure Checkout — 30 Payment Methods Accepted  |  ⭐ Trusted by Thousands of Happy Customers  |  💳 Pay Your Way — Visa, Mastercard, PayPal, Klarna, Apple Pay & More  |  ✅ Full Refund Guarantee — Shop With Confidence  |  🎁 The Perfect Gift — Delivered in 3–6 Business Days  |  ';
+            display: inline-block;
+            animation: scroll-text 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .announcement-bar-text {
+            display: none;
+        }
+
+        @keyframes scroll-text {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(233, 30, 140, 0.6), 0 0 40px rgba(233, 30, 140, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(233, 30, 140, 1), 0 0 60px rgba(233, 30, 140, 0.6), 0 0 80px rgba(233, 30, 140, 0.3);
+            }
+        }
+
+        @keyframes bounce-text {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* Header */
+        header {
+            background: #0a0a0a;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .hero .subheadline {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-image-container {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-container img {
+            max-width: 100%;
+            width: 300px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .pricing {
+            margin: 30px 0;
+            font-size: 1.1rem;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #aaa;
+            margin-right: 12px;
+            font-size: 0.9em;
+        }
+
+        .sale-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #C9A84C;
+        }
+
+        /* Colour Selector */
+        .colour-selector {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .colour-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .colour-swatch:hover {
+            transform: scale(1.15);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .colour-swatch.active {
+            border-color: #C9A84C;
+            box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.3), 0 4px 12px rgba(0,0,0,0.2);
+            animation: swatchPulse 2s ease-in-out infinite;
+        }
+
+        .white-gold {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffd700 100%);
+        }
+
+        .silver-pink {
+            background: linear-gradient(135deg, #c0c0c0 0%, #E91E8C 100%);
+        }
+
+        .navy-gold {
+            background: linear-gradient(135deg, #001f3f 0%, #C9A84C 100%);
+        }
+
+        .black {
+            background: #1a1a1a;
+            border-color: #666;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .badge {
+            font-size: 0.95rem;
+            padding: 15px;
+            background: rgba(201, 168, 76, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #C9A84C;
+        }
+
+        /* CTA Button */
+        .btn-primary {
+            background: #E91E8C;
+            color: #fff;
+            padding: 16px 48px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            background: #d41976;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(233, 30, 140, 0.5);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Features Section */
+        .features {
+            background: #fff;
+            padding: 80px 20px;
+        }
+
+        .features h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            text-align: center;
+            margin-bottom: 60px;
+            color: #0a0a0a;
+        }
+
+        .features-grid {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 12px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .features-grid::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .features-grid::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+
+        .features-grid::-webkit-scrollbar-thumb {
+            background: #C9A84C;
+            border-radius: 10px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 12px;
+            background: #f9f9f9;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            flex: 0 0 280px;
+            min-width: 280px;
+        }
+
+        .feature-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .feature-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .feature-card:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .feature-card:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+        }
+
+        .tech-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(201, 168, 76, 0.2);
+        }
+
+        .review-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+        }
+
+        .step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #0a0a0a;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Results Gallery Section */
+        .results-gallery {
+            background: #f9f9f9;
+            padding: 80px 20px;
+        }
+
+        .results-gallery h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0a0a0a;
+        }
+
+        .results-gallery .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.05rem;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .result-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 32px rgba(0,0,0,0.1);
+            background: #fff;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .result-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .result-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .result-card:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .result-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 48px rgba(0,0,0,0.15);
+        }
+
+        .result-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+        }
+
+        .result-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .result-card:hover .result-image-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .result-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
+            padding: 20px;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .result-card:hover .result-overlay {
+            opacity: 1;
+        }
+
+        .result-overlay h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
+
+        .result-overlay p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        .result-content {
+            padding: 20px;
+        }
+
+        .result-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #0a0a0a;
+        }
+
+        .result-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Technology Section */
+        .technology {
+            background: #0a0a0a;
+            color: #fff;
+            padding: 80px 20px;
+        }
+
+        .technology h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .tech-grid {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 12px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .tech-grid::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .tech-grid::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .tech-grid::-webkit-scrollbar-thumb {
+            background: #C9A84C;
+            border-radius: 10px;
+        }
+
+        .tech-item {
+            padding: 30px;
+            border-radius: 12px;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            flex: 0 0 300px;
+            min-width: 300px;
+        }
+
+        .tech-item:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .tech-item:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .tech-item:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .tech-item:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        .tech-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #C9A84C;
+        }
+
+        .tech-item p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Specifications */
+        .specifications {
+            background: #fff;
+            padding: 80px 20px;
+        }
+
+        .specifications h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            text-align: center;
+            margin-bottom: 60px;
+            color: #0a0a0a;
+        }
+
+        .specs-table {
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .specs-table td {
+            padding: 16px;
+            text-align: left;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 600;
+            color: #0a0a0a;
+            width: 40%;
+        }
+
+        .specs-table td:last-child {
+            color: #666;
+        }
+
+        /* Lifestyle Images */
+        .lifestyle {
+            background: #f9f9f9;
+            padding: 80px 20px;
+        }
+
+        .lifestyle-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .lifestyle-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .lifestyle-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .lifestyle-image:nth-child(2) img {
+            animation-delay: 0.2s;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            background: #0a0a0a;
+            color: #fff;
+            padding: 80px 20px;
+        }
+
+        .social-proof h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .reviews-grid {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 12px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .reviews-grid::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .reviews-grid::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .reviews-grid::-webkit-scrollbar-thumb {
+            background: #C9A84C;
+            border-radius: 10px;
+        }
+
+        .review-card {
+            background: rgba(201, 168, 76, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            flex: 0 0 340px;
+            min-width: 340px;
+        }
+
+        .review-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .review-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .review-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            color: #e0e0e0;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #C9A84C;
+            margin-bottom: 8px;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 0.9rem;
+        }
+
+        /* How To Use */
+        .how-to-use {
+            background: #fff;
+            padding: 80px 20px;
+        }
+
+        .how-to-use h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            text-align: center;
+            margin-bottom: 60px;
+            color: #0a0a0a;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f0f0f0 0%, #fafafa 100%);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .step:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .step:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .step:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .step-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #E91E8C;
+            margin-bottom: 12px;
+        }
+
+        .step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #0a0a0a;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* FAQs */
+        .faqs {
+            background: #f9f9f9;
+            padding: 80px 20px;
+        }
+
+        .faqs h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            text-align: center;
+            margin-bottom: 60px;
+            color: #0a0a0a;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #C9A84C;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #0a0a0a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f5f5f5;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px 0 20px;
+            color: #666;
+            line-height: 1.8;
+            transition: max-height 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), padding 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px 20px 20px;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            margin-bottom: 30px;
+        }
+
+        .urgency {
+            font-size: 1.1rem;
+            color: #E91E8C;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #C9A84C;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .payment-icon {
+            width: 40px;
+            height: 25px;
+            background: #222;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        .policy-section {
+            padding: 80px 20px;
+            background: #fff;
+            border-top: 1px solid #f0f0f0;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .policy-section:nth-of-type(even) {
+            background: #f9f9f9;
+        }
+
+        .policy-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .policy-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: #0a0a0a;
+            position: relative;
+            padding-bottom: 16px;
+            border-bottom: 3px solid #C9A84C;
+            display: inline-block;
+        }
+
+        .policy-section p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+
+        .policy-section li {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .policy-card {
+            background: #fff;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .policy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+            border-color: #C9A84C;
+        }
+
+        .policy-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #0a0a0a;
+            border-bottom: 2px solid rgba(201, 168, 76, 0.2);
+            padding-bottom: 12px;
+        }
+
+        .policy-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .policy-card li {
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .policy-card li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #C9A84C;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .policy-card ol {
+            margin-left: 0;
+            padding-left: 0;
+            list-style: none;
+            counter-reset: item;
+        }
+
+        .policy-card ol li {
+            counter-increment: item;
+            padding-left: 32px;
+            position: relative;
+        }
+
+        .policy-card ol li:before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            background: #C9A84C;
+            color: #0a0a0a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .policy-note {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        .policy-note a {
+            color: #C9A84C;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .policy-note a:hover {
+            color: #E91E8C;
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Modern Animation: Countdown Pulse Glow */
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 4px 16px rgba(233, 30, 140, 0.2), inset 0 0 10px rgba(233, 30, 140, 0.05);
+            }
+            50% {
+                box-shadow: 0 4px 24px rgba(233, 30, 140, 0.4), inset 0 0 15px rgba(233, 30, 140, 0.1);
+            }
+        }
+
+        .countdown-bar {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        /* Modern Animation: Time Value Glow */
+        @keyframes timeValueGlow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(201, 168, 76, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(201, 168, 76, 0.6), 0 0 30px rgba(233, 30, 140, 0.2);
+            }
+        }
+
+        .countdown-bar .time-value {
+            animation: timeValueGlow 2s ease-in-out infinite;
+        }
+
+        /* Modern Animation: Button Glow on Hover */
+        @keyframes buttonGlowHover {
+            0% {
+                box-shadow: 0 8px 24px rgba(233, 30, 140, 0.4);
+            }
+            50% {
+                box-shadow: 0 12px 32px rgba(233, 30, 140, 0.6), 0 0 30px rgba(233, 30, 140, 0.3);
+            }
+            100% {
+                box-shadow: 0 8px 24px rgba(233, 30, 140, 0.4);
+            }
+        }
+
+        /* Modern Animation: Smooth Float */
+        @keyframes floatIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* Modern Animation: Colour Swatch Pulse */
+        @keyframes swatchPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        /* Modern Animation: Price Emphasis */
+        @keyframes priceGlow {
+            0%, 100% {
+                color: #C9A84C;
+                text-shadow: 0 0 10px rgba(201, 168, 76, 0.2);
+            }
+            50% {
+                color: #E91E8C;
+                text-shadow: 0 0 20px rgba(233, 30, 140, 0.4);
+            }
+        }
+
+        .sale-price {
+            animation: priceGlow 3s ease-in-out infinite;
+        }
+
+        /* Modern Animation: Text Underline Slide on Hover */
+        .footer-links a {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: #C9A84C;
+            transition: left 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .footer-links a:hover::after {
+            left: 0;
+        }
+
+        /* Modern Animation: Smooth Colour Transition */
+        @keyframes colourTransition {
+            0%, 100% {
+                background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            }
+            50% {
+                background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            }
+        }
+
+        .btn-primary {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Modern Animation: Staggered Fade for Cards */
+        .feature-card,
+        .tech-item,
+        .review-card,
+        .step {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Modern Animation: Smooth Shadow Transition */
+        .feature-card,
+        .tech-item,
+        .review-card,
+        .step,
+        .lifestyle-image {
+            transition: box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Policy Section Animations */
+        .policy-card {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .policy-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .policy-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .policy-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        /* Policy Section Divider */
+        .policy-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+            margin: 40px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .announcement-bar {
+                font-size: 12px;
+                padding: 10px 15px;
+            }
+
+            .hero {
+                padding: 40px 15px;
+            }
+
+            .hero h1 {
+                margin-bottom: 20px;
+            }
+
+            .hero-image-container img {
+                width: 250px;
+            }
+
+            .colour-selector {
+                gap: 15px;
+            }
+
+            .colour-swatch {
+                width: 50px;
+                height: 50px;
+            }
+
+            .features,
+            .technology,
+            .specifications,
+            .lifestyle,
+            .social-proof,
+            .how-to-use,
+            .faqs,
+            .final-cta {
+                padding: 50px 15px;
+            }
+
+            .features h2,
+            .technology h2,
+            .specifications h2,
+            .how-to-use h2,
+            .faqs h2,
+            .final-cta h2 {
+                margin-bottom: 40px;
+            }
+
+            .specs-table td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+
+            .footer-links {
+                gap: 10px;
+                font-size: 0.85rem;
+            }
+
+            .policy-section {
+                padding: 50px 15px;
+            }
+
+            .policy-section h2 {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+
+            .policy-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .policy-card {
+                padding: 24px;
+            }
+
+            .results-gallery {
+                padding: 50px 15px;
+            }
+
+            .results-gallery h2 {
+                margin-bottom: 12px;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .result-image-wrapper {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .subheadline {
+                font-size: 1rem;
+            }
+
+            .sale-price {
+                font-size: 1.5rem;
+            }
+
+            .colour-swatch {
+                width: 45px;
+                height: 45px;
+            }
+
+            .btn-primary {
+                padding: 14px 36px;
+                font-size: 1rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card,
+            .tech-item,
+            .review-card,
+            .step {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Countdown Timer -->
+    <div class="countdown-bar">
+        <div class="countdown-bar-label">⏰ Flash Sale Ends In</div>
+        <div class="countdown-display">
+            <span>
+                <span class="time-value" id="hours">00</span>
+                <span class="time-label">Hours</span>
+            </span>
+            <span class="countdown-separator">:</span>
+            <span>
+                <span class="time-value" id="minutes">00</span>
+                <span class="time-label">Minutes</span>
+            </span>
+            <span class="countdown-separator">:</span>
+            <span>
+                <span class="time-value" id="seconds">00</span>
+                <span class="time-label">Seconds</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <span class="announcement-bar-text">🚚 Free Shipping On All Orders Worldwide!</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Salon-Quality Hair.<br>Zero Salon Prices.</h1>
+        <p class="subheadline">The AirStyler 5-in-1 — curl, straighten, volumise, wave and smooth — all in one tool.</p>
+
+        <div class="hero-image-container">
+            <img id="hero-image" src="https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_001.jpg" alt="AirStyler 5-in-1 Magic Hair Styler - White/Gold">
+        </div>
+
+        <div class="pricing">
+            <span class="original-price">£154.00</span>
+            <span class="sale-price">£49.99</span>
+        </div>
+
+        <div class="colour-selector">
+            <button class="colour-swatch white-gold active" data-colour="White/Gold" data-image="https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_001.jpg" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="White/Gold"></button>
+            <!-- TODO: Replace with Silver/Pink Stripe link -->
+            <button class="colour-swatch silver-pink" data-colour="Silver/Pink" data-image="https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_004.jpg" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="Silver/Pink"></button>
+            <!-- TODO: Replace with Navy/Gold Stripe link -->
+            <button class="colour-swatch navy-gold" data-colour="Navy/Gold" data-image="https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_002.jpg" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="Navy/Gold"></button>
+            <!-- TODO: Replace with Black Stripe link -->
+            <button class="colour-swatch black" data-colour="Black" data-image="https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_009.png" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="Black"></button>
+        </div>
+
+        <div class="trust-badges">
+            <div class="badge">✓ 50,000+ Uses Guaranteed</div>
+            <div class="badge">✓ Safe Certified</div>
+            <div class="badge">✓ Free Worldwide Shipping</div>
+            <div class="badge">✓ Full Refund Guarantee</div>
+        </div>
+
+        <a id="buy-button" href="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" class="btn-primary">Buy Now</a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>5 Tools. 1 Styler.</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Curl</h3>
+                <p>Create beautiful, bouncy curls with precision and ease.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Straighten</h3>
+                <p>Sleek, frizz-free finish with ionic technology.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Volumise</h3>
+                <p>Add lift and body to flat or fine hair types.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Wave</h3>
+                <p>Effortless beach waves in just minutes.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Smooth</h3>
+                <p>Tame and smooth any hair type beautifully.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Gallery Section -->
+    <section class="results-gallery">
+        <h2>See the Transformation</h2>
+        <p class="subtitle">Real results from everyday users. Gorgeous hair in minutes, not hours.</p>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-image-wrapper">
+                    <img src="images/Magic_hair_styler_001.png" alt="AirStyler 5-in-1 Magic Hair Styler Result 1">
+                    <div class="result-overlay">
+                        <h3>Voluminous Curls</h3>
+                        <p>Perfect waves with bounce and volume</p>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <h3>Voluminous Curls</h3>
+                    <p>Achieve salon-quality curls that last all day with perfect definition.</p>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <div class="result-image-wrapper">
+                    <img src="images/Magic_hair_styler_002.png" alt="AirStyler 5-in-1 Magic Hair Styler Result 2">
+                    <div class="result-overlay">
+                        <h3>Silky Smooth</h3>
+                        <p>Frizz-free, shiny, polished finish</p>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <h3>Silky Smooth</h3>
+                    <p>Straighten with ionic technology for ultra-shiny, frizz-free results.</p>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <div class="result-image-wrapper">
+                    <img src="images/Magic_hair_styler_004.png" alt="AirStyler 5-in-1 Magic Hair Styler Result 3">
+                    <div class="result-overlay">
+                        <h3>Beach Waves</h3>
+                        <p>Effortless, textured waves in minutes</p>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <h3>Beach Waves</h3>
+                    <p>Create effortless, textured waves that look natural and beachy.</p>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <div class="result-image-wrapper">
+                    <img src="images/Magic_hair_003.png" alt="AirStyler 5-in-1 Magic Hair Styler Result 4">
+                    <div class="result-overlay">
+                        <h3>Root Lift & Volume</h3>
+                        <p>Add lift, body, and lasting hold</p>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <h3>Root Lift & Volume</h3>
+                    <p>Add instant lift and volume at the roots for a polished, fuller look.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology">
+        <h2>Built to Protect Your Hair</h2>
+        <div class="tech-grid">
+            <div class="tech-item">
+                <h3>ION & Infrared Technology</h3>
+                <p>Reduces frizz, enhances shine, and protects your hair with every use.</p>
+            </div>
+            <div class="tech-item">
+                <h3>Tourmaline Ceramic Plates</h3>
+                <p>Built to last 50,000+ uses without degradation.</p>
+            </div>
+            <div class="tech-item">
+                <h3>Adjustable Heat: 160°C–200°C</h3>
+                <p>Perfect settings for all hair types, from fine to thick.</p>
+            </div>
+            <div class="tech-item">
+                <h3>360° Rotatable Cord</h3>
+                <p>No tangles, no frustration — complete freedom of movement.</p>
+            </div>
+            <div class="tech-item">
+                <h3>Dual Voltage</h3>
+                <p>Works worldwide — perfect for travel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section class="specifications">
+        <h2>Product Specifications</h2>
+        <table class="specs-table">
+            <tr>
+                <td>Dimensions</td>
+                <td>39.5 x 5cm | Heating plate: 60x24mm</td>
+            </tr>
+            <tr>
+                <td>Power</td>
+                <td>1000W</td>
+            </tr>
+            <tr>
+                <td>Material</td>
+                <td>Tourmaline ceramic heating plates</td>
+            </tr>
+            <tr>
+                <td>Temperature Range</td>
+                <td>160°C–200°C</td>
+            </tr>
+            <tr>
+                <td>Cord</td>
+                <td>360° rotatable, dual voltage</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Lifestyle Images -->
+    <section class="lifestyle">
+        <div class="lifestyle-container">
+            <div class="lifestyle-image">
+                <img src="https://magichairstyler.com/cdn/shop/files/YK75S961aea726a034936810093ca48e4a9978.jpg" alt="Woman using AirStyler 5-in-1 Hair Styler">
+            </div>
+            <div class="lifestyle-image">
+                <img src="https://magichairstyler.com/cdn/shop/files/1pdwS433d7f0b4803483dbc08a3133ab3c652y.jpg" alt="AirStyler 5-in-1 Hair Styler results on different hair types">
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <h2>Customer Reviews</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-text">"This styler works great! I use it to add lift and volume to my hair, and it does the job effortlessly."</div>
+                <div class="review-author">Emma T.</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="review-card">
+                <div class="review-text">"I was impressed by the quality. It heats up quickly and is perfect for thick hair like mine. Highly recommend!"</div>
+                <div class="review-author">Sophia L.</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="review-card">
+                <div class="review-text">"I purchased this as a gift for my daughter, and she loves it. It's stylish, easy to use, and delivers salon results."</div>
+                <div class="review-author">Hannah K.</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="review-card">
+                <div class="review-text">"Best purchase ever! The multiple attachments make styling so versatile. I've replaced three tools with just this one."</div>
+                <div class="review-author">Olivia M.</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="review-card">
+                <div class="review-text">"The heat settings are perfect for my sensitive scalp. No more damage, just gorgeous, healthy-looking waves."</div>
+                <div class="review-author">Charlotte D.</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="review-card">
+                <div class="review-text">"I'm obsessed! The results last all day, and it's so much easier to use than my old curling iron. Worth every penny."</div>
+                <div class="review-author">Jessica P.</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How To Use -->
+    <section class="how-to-use">
+        <h2>How To Use</h2>
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Clean Hair</h3>
+                <p>Start with clean, towel-dried hair.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Choose Settings</h3>
+                <p>Select your attachment and heat setting.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Style</h3>
+                <p>Glide through sections of your hair smoothly.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Cool Shot</h3>
+                <p>Finish with a cool shot for long-lasting results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="faqs">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is the AirStyler suitable for thick or long hair?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">Yes, the AirStyler features adjustable heat from 160°C–200°C, making it suitable for all hair types including thick, curly, and long hair. The ceramic plates distribute heat evenly for consistent results.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I return it if not satisfied?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">Absolutely! We offer a full refund or exchange guarantee on all AirStyler purchases. If you're not completely satisfied for any reason, we'll make it right.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long is delivery?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">Delivery typically takes 3–6 business days depending on your location. We offer free worldwide shipping on all orders, so you can order with confidence no matter where you are.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Your Best Hair Day Starts Here</h2>
+
+        <div class="colour-selector">
+            <button class="colour-swatch white-gold active" data-colour="White/Gold" data-image="https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_001.jpg" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="White/Gold"></button>
+            <button class="colour-swatch silver-pink" data-colour="Silver/Pink" data-image="https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_004.jpg" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="Silver/Pink"></button>
+            <button class="colour-swatch navy-gold" data-colour="Navy/Gold" data-image="https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_002.jpg" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="Navy/Gold"></button>
+            <button class="colour-swatch black" data-colour="Black" data-image="https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_009.png" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="Black"></button>
+        </div>
+
+        <a id="buy-button-cta" href="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" class="btn-primary">Buy Now</a>
+
+        <p class="urgency">⚡ Limited stock available — order today</p>
+    </section>
+
+    <!-- Policy Sections Divider -->
+    <div style="background: linear-gradient(180deg, transparent, rgba(201,168,76,0.1), transparent); padding: 60px 20px; text-align: center;">
+        <p style="color: #999; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin: 0;">Additional Information</p>
+    </div>
+
+    <section class="policy-section" id="privacy">
+        <div class="policy-content">
+            <h2>Privacy Policy</h2>
+            <p>Last updated: November 12, 2025. Magic Hair Styler collects contact, order, account, usage, and support data so we can fulfill orders, keep accounts secure, and respond to questions while delivering a personalized experience across magichairstyler.com.</p>
+            <div class="policy-grid">
+                <article class="policy-card">
+                    <h3>What we collect</h3>
+                    <ul>
+                        <li>Contact, billing, and shipping details plus confirmation data for every order.</li>
+                        <li>Account credentials, wish list activity, support requests, and customer-submitted content.</li>
+                        <li>Usage data captured automatically via cookies, pixels, and similar technologies.</li>
+                        <li>Third-party sources like Shopify, payment processors, and ad/analytics partners.</li>
+                    </ul>
+                </article>
+                <article class="policy-card">
+                    <h3>How we use your data</h3>
+                    <ul>
+                        <li>To process payments, ship products, manage returns, and keep you informed about orders.</li>
+                        <li>For marketing, advertising, and product improvements—always according to applicable law.</li>
+                        <li>To detect, investigate, and prevent fraud or other unauthorized activity on the Site.</li>
+                        <li>To provide customer support, respond to inquiries, and improve the Services.</li>
+                    </ul>
+                </article>
+                <article class="policy-card">
+                    <h3>Your rights</h3>
+                    <ul>
+                        <li>Request access to, correction of, or deletion of the personal data we maintain about you.</li>
+                        <li>Ask for portability, restriction of processing, and to withdraw consent where required.</li>
+                        <li>Opt out of any sale/sharing or targeted advertising, including via the Global Privacy Control signal.</li>
+                        <li>Appeal denials and manage communication preferences (promotional emails can be unsubscribed at any time).</li>
+                    </ul>
+                </article>
+            </div>
+            <p class="policy-note">We do not discriminate for exercising these rights. Contact <a href="mailto:magichairstyler@aressentinel.com">magichairstyler@aressentinel.com</a> or write to 21 Simpson Road, The Dale, Moston, CH2 4AG, UK if you need help reviewing, deleting, or transferring your data.</p>
+        </div>
+    </section>
+
+    <section class="policy-section" id="refund">
+        <div class="policy-content">
+            <h2>Refund Policy</h2>
+            <p>Magic Hair Styler offers a 30-day satisfaction guarantee for US and EU customers. Returns must be opened within 30 days of delivery, and items must be new, unused, and returned with tags, packaging, and proof of purchase.</p>
+            <div class="policy-grid">
+                <article class="policy-card">
+                    <h3>Eligibility &amp; condition checks</h3>
+                    <ul>
+                        <li>Products must meet sanitary standards: intact packaging, accessories, and documentation.</li>
+                        <li>Defective, incorrect, or damaged products should be reported within 14 days with detailed photos/videos so we can cover return shipping.</li>
+                        <li>UK customers have 14 days to notify us and 14 additional days to return goods; refunds are processed within 14 days of receipt.</li>
+                    </ul>
+                </article>
+                <article class="policy-card">
+                    <h3>Refunds &amp; fees</h3>
+                    <ul>
+                        <li>Shipping and delivery fees are non-refundable unless the return is due to our error; expedited or insured shipping costs are also deducted.</li>
+                        <li>Returned merchandise is inspected, and approved refunds are credited to the original payment method within a few weekdays.</li>
+                        <li>A $15 restocking fee applies to all returns unless a replacement is issued.</li>
+                        <li>Customer remorse returns (wrong model, change of mind) require customer-paid return shipping and must be in like-new condition.</li>
+                    </ul>
+                </article>
+                <article class="policy-card">
+                    <h3>Process &amp; support</h3>
+                    <ul>
+                        <li>Start a return through our portal or email <a href="mailto:info@aressentinel.com">info@aressentinel.com</a>; do not send items without authorization.</li>
+                        <li>Orders that have not shipped can be canceled for a full refund; shipped orders may be returned unused under the standard policy.</li>
+                        <li>International returns must use traceable shipping; we are not liable for packages in transit, and customs duties are non-refundable.</li>
+                        <li>Return labels will include the correct address—do not ship to the operations address listed below unless directed.</li>
+                        <li>For help, contact magichairstyler@aressentinel.com or call +44 730 191 8219; include your invoice number to speed up the response.</li>
+                    </ul>
+                </article>
+            </div>
+            <p class="policy-note">Operations address: Ares Sentinel Limited, 21 Simpson Road, Chester CH2 4AG, UK. Always refer to the return portal instructions before shipping merchandise and keep your tracking information handy.</p>
+        </div>
+    </section>
+
+    <section class="policy-section" id="terms">
+        <div class="policy-content">
+            <h2>Terms of Service</h2>
+            <p>Magic Hair Styler operates magichairstyler.com, and the Terms of Service describe your rights and obligations when you visit the site or place an order. By using the site you agree to the Terms (and any referenced policies) and accept that we may update them at any time.</p>
+            <div class="policy-grid">
+                <article class="policy-card">
+                    <h3>User obligations</h3>
+                    <ul>
+                        <li>You confirm you are at least the age of majority in your jurisdiction and will use the Services lawfully.</li>
+                        <li>Do not transmit malicious code, infringe intellectual property, or exploit the site for unlawful purposes.</li>
+                        <li>We can refuse service, limit quantities, change prices, or cancel orders at our discretion.</li>
+                    </ul>
+                </article>
+                <article class="policy-card">
+                    <h3>Information &amp; tools</h3>
+                    <ul>
+                        <li>Product information may be inaccurate or out of date; rely on it solely at your own risk.</li>
+                        <li>Products may be available exclusively online and subject to limited quantities.</li>
+                        <li>Optional third-party tools are provided “as is”; we are not liable for their performance or your interactions with third-party resources.</li>
+                        <li>Your personal information submission is governed by the Privacy Policy.</li>
+                    </ul>
+                </article>
+                <article class="policy-card">
+                    <h3>Legal protections</h3>
+                    <ul>
+                        <li>We disclaim warranties, limit liability, and require you to indemnify Magic Hair Styler and its affiliates.</li>
+                        <li>These Terms and referenced policies constitute the entire agreement; ambiguities are not construed against us.</li>
+                        <li>Governing law: United Kingdom; disputes resolved under UK courts.</li>
+                        <li>Contact <a href="mailto:magichairstyler@aressentinel.com">magichairstyler@aressentinel.com</a> with questions.</li>
+                    </ul>
+                </article>
+            </div>
+            <p class="policy-note">We may amend these Terms at any time by posting updates on this page. Continued use of the site after changes indicates your acceptance.</p>
+        </div>
+    </section>
+
+    <section class="policy-section" id="shipping">
+        <div class="policy-content">
+            <h2>Shipping Policy</h2>
+            <p>Magichairstyler.com offers FREE Shipping everywhere—our policy simply states “FREE Shipping” but we also aim to get orders to you within 10-14 working days, depending on location.</p>
+            <div class="policy-grid">
+                <article class="policy-card">
+                    <h3>Delivery windows</h3>
+                    <ul>
+                        <li>Orders are processed as soon as possible, and most customers receive their AirStyler in 10-14 working days.</li>
+                        <li>We deliver worldwide, adjusting the plug to your destination so it works out of the box.</li>
+                        <li>Delivery details and tracking links are sent by email once the order ships—reach out if you do not receive them.</li>
+                    </ul>
+                </article>
+                <article class="policy-card">
+                    <h3>Coverage &amp; liability</h3>
+                    <ul>
+                        <li>Shipping is free on every order; there are no hidden fees at checkout.</li>
+                        <li>Duties, taxes, or customs charges are the customer’s responsibility—check your country’s policies before ordering.</li>
+                        <li>We are not liable for packages lost, stolen, or damaged in transit, but we can help you work with the carrier if an issue occurs.</li>
+                    </ul>
+                </article>
+                <article class="policy-card">
+                    <h3>Delays &amp; support</h3>
+                    <ul>
+                        <li>Occasional delays happen because of customs or other unforeseen events; contact <a href="mailto:magichairstyler@aressentinel.com">magichairstyler@aressentinel.com</a> if your package has not arrived within the expected window.</li>
+                        <li>Returns and cancellations follow the 30-Day Satisfaction Guarantee, so please refer to the refund policy before shipping anything back.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="policy-section" id="contact">
+        <div class="policy-content">
+            <h2>Contact</h2>
+            <p>Need help placing an order, triggering a return, or managing account privacy? Email <a href="mailto:magichairstyler@aressentinel.com">magichairstyler@aressentinel.com</a>, call +44 730 191 8219, or submit the form at <a href="/pages/contact">/pages/contact</a>.</p>
+            <div class="policy-grid">
+                <article class="policy-card">
+                    <h3>Contact options</h3>
+                    <ul>
+                        <li>Email magichairstyler@aressentinel.com for order, warranty, or privacy requests.</li>
+                        <li>Call +44 730 191 8219 if you need live help or confirmation.</li>
+                        <li>Use the contact form (name, email, phone, comment) to send secure messages directly through the site.</li>
+                    </ul>
+                </article>
+                <article class="policy-card">
+                    <h3>Support promise</h3>
+                    <ul>
+                        <li>Our support team handles refund, exchange, warranty, and privacy inquiries in compliance with the linked policies.</li>
+                        <li>Operations address for mailed correspondence: Ares Sentinel Limited, 21 Simpson Road, Chester, CH2 4AG, UK.</li>
+                        <li>Always include your invoice number when asking about returns or data requests to help us resolve matters faster.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Magic Hair Styler. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#refund">Refund Policy</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#shipping">Shipping Policy</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="payment-icons">
+            <div class="payment-icon">Visa</div>
+            <div class="payment-icon">MC</div>
+            <div class="payment-icon">PP</div>
+            <div class="payment-icon">Apple</div>
+            <div class="payment-icon">Google</div>
+            <div class="payment-icon">Klarna</div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "AirStyler — The Ultimate 5-in-1 Magic Hair Styler",
+        "image": "https://magichairstyler.com/cdn/shop/files/magic-hair-styler-ionic-hair-curler_001.jpg",
+        "description": "The AirStyler 5-in-1 — curl, straighten, volumise, wave and smooth — all in one tool. Salon-quality results with ionic and infrared technology.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Magic Hair Styler"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800",
+            "priceCurrency": "GBP",
+            "price": "49.99",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "3"
+        }
+    }
+    </script>
+
+    <script>
+        // Countdown Timer to Midnight
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+
+            const diff = midnight - now;
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Colour Swatch Interaction
+        const colourSwatches = document.querySelectorAll('.colour-swatch');
+        const heroImage = document.getElementById('hero-image');
+        const buyButton = document.getElementById('buy-button');
+        const buyButtonCta = document.getElementById('buy-button-cta');
+
+        colourSwatches.forEach(swatch => {
+            swatch.addEventListener('click', function() {
+                // Update active state
+                colourSwatches.forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+
+                // Update hero image
+                const newImage = this.getAttribute('data-image');
+                const colour = this.getAttribute('data-colour');
+                heroImage.src = newImage;
+                heroImage.alt = `AirStyler 5-in-1 Magic Hair Styler - ${colour}`;
+
+                // Update buy button href
+                const stripeLink = this.getAttribute('data-stripe');
+                buyButton.href = stripeLink;
+                buyButtonCta.href = stripeLink;
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', function() {
+                // Close all other items
+                faqItems.forEach(faq => {
+                    if (faq !== item) {
+                        faq.classList.remove('active');
+                    }
+                });
+
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        // Observe animated elements
+        document.querySelectorAll('.feature-card, .tech-item, .review-card, .step, .lifestyle-image img').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Auto-scroll Features Section with Infinite Loop
+        const featuresGrid = document.querySelector('.features-grid');
+        const originalCards = Array.from(document.querySelectorAll('.feature-card'));
+
+        // Duplicate cards for seamless infinite scroll
+        originalCards.forEach(card => {
+            featuresGrid.appendChild(card.cloneNode(true));
+        });
+
+        let scrollPosition = 0;
+        const scrollSpeed = 0.6; // pixels per frame
+        const scrollInterval = 30; // milliseconds between frames
+        const singleSetWidth = originalCards[0].offsetWidth * originalCards.length + (30 * (originalCards.length - 1)); // card width + gaps
+
+        setInterval(() => {
+            scrollPosition += scrollSpeed;
+            featuresGrid.scrollLeft = scrollPosition;
+
+            // Seamless reset when reaching duplicate set
+            if (scrollPosition >= singleSetWidth) {
+                scrollPosition = 0;
+                featuresGrid.scrollLeft = 0;
+            }
+        }, scrollInterval);
+
+        // Auto-scroll Technology Section with Infinite Loop
+        const techGrid = document.querySelector('.tech-grid');
+        const originalTechItems = Array.from(document.querySelectorAll('.tech-grid > .tech-item'));
+
+        // Duplicate tech items for seamless infinite scroll
+        originalTechItems.forEach(item => {
+            techGrid.appendChild(item.cloneNode(true));
+        });
+
+        let techScrollPosition = 0;
+        const techScrollSpeed = 0.6; // pixels per frame
+        const techScrollInterval = 30; // milliseconds between frames
+        const techSingleSetWidth = originalTechItems[0].offsetWidth * originalTechItems.length + (30 * (originalTechItems.length - 1)); // item width + gaps
+
+        setInterval(() => {
+            techScrollPosition += techScrollSpeed;
+            techGrid.scrollLeft = techScrollPosition;
+
+            // Seamless reset when reaching duplicate set
+            if (techScrollPosition >= techSingleSetWidth) {
+                techScrollPosition = 0;
+                techGrid.scrollLeft = 0;
+            }
+        }, techScrollInterval);
+
+        // Auto-scroll Reviews Section with Infinite Loop
+        const reviewsGrid = document.querySelector('.reviews-grid');
+        const originalReviews = Array.from(document.querySelectorAll('.reviews-grid > .review-card'));
+
+        // Duplicate review cards for seamless infinite scroll
+        originalReviews.forEach(review => {
+            reviewsGrid.appendChild(review.cloneNode(true));
+        });
+
+        let reviewsScrollPosition = 0;
+        const reviewsScrollSpeed = 0.6; // pixels per frame
+        const reviewsScrollInterval = 30; // milliseconds between frames
+        const reviewsSingleSetWidth = originalReviews[0].offsetWidth * originalReviews.length + (30 * (originalReviews.length - 1)); // card width + gaps
+
+        setInterval(() => {
+            reviewsScrollPosition += reviewsScrollSpeed;
+            reviewsGrid.scrollLeft = reviewsScrollPosition;
+
+            // Seamless reset when reaching duplicate set
+            if (reviewsScrollPosition >= reviewsSingleSetWidth) {
+                reviewsScrollPosition = 0;
+                reviewsGrid.scrollLeft = 0;
+            }
+        }, reviewsScrollInterval);
+    </script>
+</body>
+</html>
