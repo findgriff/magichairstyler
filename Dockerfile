@@ -3,6 +3,9 @@ FROM nginx:alpine
 # Copy the HTML file to the nginx web root
 COPY index.html /usr/share/nginx/html/index.html
 
+# Copy images directory
+COPY images/ /usr/share/nginx/html/images/
+
 # Expose port 80
 EXPOSE 80
 
