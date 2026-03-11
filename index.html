@@ -372,6 +372,25 @@
             min-width: 280px;
         }
 
+        .feature-image {
+            height: 160px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #f2c5d3 0%, #c9a84c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .feature-image span {
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
         .feature-card:nth-child(2) {
             animation-delay: 0.1s;
         }
@@ -1482,22 +1501,37 @@
         <h2>5 Tools. 1 Styler.</h2>
         <div class="features-grid">
             <div class="feature-card">
+                <div class="feature-image" aria-label="Curl tool preview">
+                    <span>Curl</span>
+                </div>
                 <h3>Curl</h3>
                 <p>Create beautiful, bouncy curls with precision and ease.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-image" aria-label="Straighten tool preview">
+                    <span>Straighten</span>
+                </div>
                 <h3>Straighten</h3>
                 <p>Sleek, frizz-free finish with ionic technology.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-image" aria-label="Volumise tool preview">
+                    <span>Volumise</span>
+                </div>
                 <h3>Volumise</h3>
                 <p>Add lift and body to flat or fine hair types.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-image" aria-label="Wave tool preview">
+                    <span>Wave</span>
+                </div>
                 <h3>Wave</h3>
                 <p>Effortless beach waves in just minutes.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-image" aria-label="Smooth tool preview">
+                    <span>Smooth</span>
+                </div>
                 <h3>Smooth</h3>
                 <p>Tame and smooth any hair type beautifully.</p>
             </div>
