@@ -364,14 +364,59 @@
             line-height: 1.8;
         }
 
-        .product-grid {
+        .collection-note {
+            margin-top: 18px;
+            color: #7a7472;
+            font-size: 0.95rem;
+        }
+
+        .product-carousel-shell {
             max-width: 1240px;
             margin: 0 auto;
-            display: grid;
-            gap: 28px;
+            position: relative;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin: 0 0 20px;
+        }
+
+        .carousel-button {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 1px solid rgba(10, 10, 10, 0.12);
+            background: rgba(255, 255, 255, 0.92);
+            color: #0a0a0a;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-button:hover {
+            transform: translateY(-2px);
+            border-color: #C9A84C;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-carousel {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            padding-bottom: 12px;
+        }
+
+        .product-carousel::-webkit-scrollbar {
+            display: none;
         }
 
         .product-card {
+            flex: 0 0 100%;
             display: grid;
             grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
             gap: 28px;
@@ -383,6 +428,7 @@
             box-shadow: 0 24px 70px rgba(36, 25, 15, 0.08);
             opacity: 0;
             animation: fadeInUp 0.7s ease forwards;
+            scroll-snap-align: start;
         }
 
         .product-card:nth-child(2) {
@@ -527,6 +573,13 @@
             flex-wrap: wrap;
             gap: 14px;
             align-items: center;
+        }
+
+        .product-status {
+            margin-top: 6px;
+            color: #7b6a43;
+            font-size: 0.92rem;
+            font-weight: 600;
         }
 
         .btn-secondary {
@@ -1611,7 +1664,12 @@
                 padding: 50px 15px;
             }
 
+            .carousel-controls {
+                justify-content: center;
+            }
+
             .product-card {
+                flex-basis: 100%;
                 grid-template-columns: 1fr;
                 padding: 20px;
             }
@@ -1749,10 +1807,17 @@
         <div class="collection-intro">
             <span class="collection-eyebrow">Shop The Collection</span>
             <h2>Four finishes. One high-impact styling system.</h2>
-            <p>Each AirStyler finish now has its own product section in the repo, using the new packshot photography so customers can browse the exact look they want before they buy.</p>
+            <p>Browse the four AirStyler finishes in a dedicated carousel, then send shoppers back to the main product flow where they can choose both plug and colour until individual Stripe links are ready.</p>
+            <p class="collection-note">Checkout still happens through the main product button. Plug type and colour selection stay there for now.</p>
         </div>
 
-        <div class="product-grid">
+        <div class="product-carousel-shell">
+            <div class="carousel-controls" aria-label="Collection carousel controls">
+                <button class="carousel-button" id="carousel-prev" type="button" aria-label="Previous product">‹</button>
+                <button class="carousel-button" id="carousel-next" type="button" aria-label="Next product">›</button>
+            </div>
+
+            <div class="product-carousel" id="product-carousel">
             <article class="product-card" id="white-edition">
                 <div class="product-visual white">
                     <img src="images/airstyler_prodcut_white_001.jpg" alt="White and gold AirStyler product page image">
@@ -1772,9 +1837,9 @@
                         <li>Strong contrast against dark hero backgrounds.</li>
                     </ul>
                     <div class="product-actions">
-                        <a href="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" class="btn-primary">Buy White / Gold</a>
                         <a href="#top" class="btn-secondary product-jump" data-product-key="white">Preview In Hero</a>
                     </div>
+                    <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
                 </div>
             </article>
 
@@ -1797,9 +1862,9 @@
                         <li>Keeps the same 5-in-1 feature set and pricing.</li>
                     </ul>
                     <div class="product-actions">
-                        <a href="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" class="btn-primary">Buy Blush Pink</a>
                         <a href="#top" class="btn-secondary product-jump" data-product-key="pink">Preview In Hero</a>
                     </div>
+                    <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
                 </div>
             </article>
 
@@ -1822,9 +1887,9 @@
                         <li>Reads clearly in card layouts and comparison modules.</li>
                     </ul>
                     <div class="product-actions">
-                        <a href="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" class="btn-primary">Buy Navy / Gold</a>
                         <a href="#top" class="btn-secondary product-jump" data-product-key="navy">Preview In Hero</a>
                     </div>
+                    <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
                 </div>
             </article>
 
@@ -1847,11 +1912,12 @@
                         <li>Uses the same heat, ceramic, and dual-voltage system.</li>
                     </ul>
                     <div class="product-actions">
-                        <a href="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" class="btn-primary">Buy Midnight Black</a>
                         <a href="#top" class="btn-secondary product-jump" data-product-key="black">Preview In Hero</a>
                     </div>
+                    <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
                 </div>
             </article>
+            </div>
         </div>
     </section>
 
@@ -1904,7 +1970,7 @@
         <div class="results-grid">
             <div class="result-card">
                 <div class="result-image-wrapper">
-                    <img src="images/airstyler_prodcut_white_001.jpg" alt="AirStyler 5-in-1 Magic Hair Styler Result 1">
+                    <img src="images/Magic_hair_styler_001.png" alt="AirStyler 5-in-1 Magic Hair Styler Result 1">
                     <div class="result-overlay">
                         <h3>Voluminous Curls</h3>
                         <p>Perfect waves with bounce and volume</p>
@@ -1918,7 +1984,7 @@
 
             <div class="result-card">
                 <div class="result-image-wrapper">
-                    <img src="images/airstyler_product_pink.jpg" alt="AirStyler 5-in-1 Magic Hair Styler Result 2">
+                    <img src="images/Magic_hair_styler_002.png" alt="AirStyler 5-in-1 Magic Hair Styler Result 2">
                     <div class="result-overlay">
                         <h3>Silky Smooth</h3>
                         <p>Frizz-free, shiny, polished finish</p>
@@ -1932,7 +1998,7 @@
 
             <div class="result-card">
                 <div class="result-image-wrapper">
-                    <img src="images/airstyler_product_navy.jpg" alt="AirStyler 5-in-1 Magic Hair Styler Result 3">
+                    <img src="images/Magic_hair_styler_004.png" alt="AirStyler 5-in-1 Magic Hair Styler Result 3">
                     <div class="result-overlay">
                         <h3>Beach Waves</h3>
                         <p>Effortless, textured waves in minutes</p>
@@ -1946,7 +2012,7 @@
 
             <div class="result-card">
                 <div class="result-image-wrapper">
-                    <img src="images/airstyler_product_black.png" alt="AirStyler 5-in-1 Magic Hair Styler Result 4">
+                    <img src="images/Magic_hair_003.png" alt="AirStyler 5-in-1 Magic Hair Styler Result 4">
                     <div class="result-overlay">
                         <h3>Root Lift & Volume</h3>
                         <p>Add lift, body, and lasting hold</p>
@@ -2380,6 +2446,9 @@
         const buyButton = document.getElementById('buy-button');
         const buyButtonCta = document.getElementById('buy-button-cta');
         const productJumpButtons = document.querySelectorAll('.product-jump');
+        const productCarousel = document.getElementById('product-carousel');
+        const carouselPrev = document.getElementById('carousel-prev');
+        const carouselNext = document.getElementById('carousel-next');
 
         function applyProductSelection(sourceSwatch) {
             const productKey = sourceSwatch.getAttribute('data-product-key');
@@ -2417,6 +2486,30 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
+
+        function scrollProductCarousel(direction) {
+            if (!productCarousel) {
+                return;
+            }
+
+            const slideWidth = productCarousel.clientWidth + 24;
+            productCarousel.scrollBy({
+                left: slideWidth * direction,
+                behavior: 'smooth'
+            });
+        }
+
+        if (carouselPrev) {
+            carouselPrev.addEventListener('click', function() {
+                scrollProductCarousel(-1);
+            });
+        }
+
+        if (carouselNext) {
+            carouselNext.addEventListener('click', function() {
+                scrollProductCarousel(1);
+            });
+        }
 
         // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
