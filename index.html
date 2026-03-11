@@ -200,19 +200,6 @@
             margin-right: auto;
         }
 
-        .hero-image-container {
-            margin: 40px 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-image-container img {
-            max-width: 100%;
-            width: 300px;
-            height: auto;
-            object-fit: contain;
-        }
-
         .pricing {
             margin: 30px 0;
             font-size: 1.1rem;
@@ -324,16 +311,23 @@
 
         /* Product Collection */
         .product-pages {
-            padding: 90px 20px;
+            padding: 18px 18px 34px;
             background:
-                radial-gradient(circle at top right, rgba(233, 30, 140, 0.12), transparent 35%),
-                radial-gradient(circle at bottom left, rgba(201, 168, 76, 0.2), transparent 45%),
-                linear-gradient(180deg, #fff6fa 0%, #fff 45%, #faf7ef 100%);
+                radial-gradient(circle at top right, rgba(233, 30, 140, 0.24), transparent 32%),
+                radial-gradient(circle at bottom left, rgba(201, 168, 76, 0.22), transparent 38%),
+                linear-gradient(145deg, rgba(255, 246, 250, 0.98) 0%, rgba(255, 255, 255, 0.98) 46%, rgba(248, 243, 233, 0.98) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(18px);
+            border-radius: 34px;
+            margin: 0 auto 26px;
+            max-width: 1240px;
+            overflow: hidden;
         }
 
         .collection-intro {
             max-width: 760px;
-            margin: 0 auto 50px;
+            margin: 0 auto 22px;
             text-align: center;
         }
 
@@ -365,54 +359,105 @@
         }
 
         .collection-note {
-            margin-top: 18px;
-            color: #7a7472;
+            margin-top: 0;
+            color: #5d5457;
             font-size: 0.95rem;
+            text-wrap: balance;
         }
 
         .product-carousel-shell {
-            max-width: 1240px;
+            max-width: 1180px;
             margin: 0 auto;
             position: relative;
         }
 
         .carousel-controls {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
             gap: 12px;
-            margin: 0 0 20px;
+            margin: 0 0 18px;
+        }
+
+        .carousel-heading {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            text-align: left;
+        }
+
+        .carousel-heading strong {
+            font-size: 0.82rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #0a0a0a;
+        }
+
+        .carousel-heading span {
+            color: #6c6065;
+            font-size: 0.95rem;
         }
 
         .carousel-button {
             width: 52px;
             height: 52px;
             border-radius: 50%;
-            border: 1px solid rgba(10, 10, 10, 0.12);
-            background: rgba(255, 255, 255, 0.92);
-            color: #0a0a0a;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            background: rgba(10, 10, 10, 0.78);
+            color: #fff;
             font-size: 1.4rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
         }
 
         .carousel-button:hover {
-            transform: translateY(-2px);
-            border-color: #C9A84C;
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px) scale(1.04);
+            background: #E91E8C;
+            box-shadow: 0 14px 32px rgba(233, 30, 140, 0.32);
+        }
+
+        .carousel-button-group {
+            display: flex;
+            gap: 12px;
         }
 
         .product-carousel {
             display: flex;
-            gap: 24px;
+            gap: 0;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
             scrollbar-width: none;
-            padding-bottom: 12px;
+            padding-bottom: 18px;
         }
 
         .product-carousel::-webkit-scrollbar {
             display: none;
+        }
+
+        .product-track {
+            position: relative;
+        }
+
+        .carousel-progress {
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            bottom: 0;
+            height: 4px;
+            background: rgba(10, 10, 10, 0.08);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .carousel-progress-bar {
+            width: 25%;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #C9A84C 0%, #E91E8C 100%);
+            transition: transform 0.55s ease;
+            transform-origin: left center;
         }
 
         .product-card {
@@ -421,14 +466,25 @@
             grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
             gap: 28px;
             align-items: center;
-            padding: 28px;
-            background: rgba(255, 255, 255, 0.85);
-            border: 1px solid rgba(201, 168, 76, 0.25);
-            border-radius: 30px;
-            box-shadow: 0 24px 70px rgba(36, 25, 15, 0.08);
+            padding: 34px;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.62)),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+            border: 1px solid rgba(255, 255, 255, 0.42);
+            border-radius: 34px;
+            box-shadow: 0 26px 70px rgba(30, 22, 18, 0.14);
             opacity: 0;
             animation: fadeInUp 0.7s ease forwards;
             scroll-snap-align: start;
+            transform: scale(0.96);
+            filter: saturate(0.9);
+            transition: transform 0.55s ease, box-shadow 0.55s ease, filter 0.55s ease, opacity 0.55s ease;
+        }
+
+        .product-card.is-active {
+            transform: scale(1);
+            filter: saturate(1);
+            box-shadow: 0 32px 90px rgba(20, 14, 12, 0.18);
         }
 
         .product-card:nth-child(2) {
@@ -450,12 +506,16 @@
         .product-visual {
             position: relative;
             min-height: 440px;
-            border-radius: 24px;
+            border-radius: 28px;
             overflow: hidden;
             padding: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background:
+                radial-gradient(circle at top, rgba(255, 255, 255, 0.9), transparent 48%),
+                linear-gradient(180deg, #fffdfb 0%, #fff8f6 52%, #fdf1f4 100%);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
         }
 
         .product-visual::after {
@@ -463,7 +523,17 @@
             position: absolute;
             inset: 14px;
             border-radius: 18px;
-            border: 1px solid rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(200, 173, 168, 0.22);
+            pointer-events: none;
+        }
+
+        .product-visual::before {
+            content: '';
+            position: absolute;
+            inset: auto auto -18% -10%;
+            width: 62%;
+            height: 62%;
+            background: radial-gradient(circle, rgba(244, 210, 220, 0.55) 0%, rgba(244, 210, 220, 0) 72%);
             pointer-events: none;
         }
 
@@ -474,27 +544,42 @@
             max-width: 430px;
             max-height: 420px;
             object-fit: contain;
-            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.18));
+            filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.2));
+            transform: translateY(0);
+            transition: transform 0.8s ease;
+        }
+
+        .product-card.is-active .product-visual img {
+            transform: translateY(-6px) scale(1.02);
         }
 
         .product-visual.white {
-            background: linear-gradient(145deg, #fff 0%, #f5ead0 100%);
+            background:
+                radial-gradient(circle at top, rgba(255, 255, 255, 0.95), transparent 48%),
+                linear-gradient(180deg, #fffefc 0%, #fbf4ea 100%);
         }
 
         .product-visual.pink {
-            background: linear-gradient(145deg, #ffe7f1 0%, #f5eefb 100%);
+            background:
+                radial-gradient(circle at top, rgba(255, 255, 255, 0.95), transparent 48%),
+                linear-gradient(180deg, #fffafc 0%, #fdf0f5 100%);
         }
 
         .product-visual.navy {
-            background: linear-gradient(145deg, #0f1b39 0%, #2a3d7a 50%, #b89642 100%);
+            background:
+                radial-gradient(circle at top, rgba(255, 255, 255, 0.88), transparent 48%),
+                linear-gradient(180deg, #fffbfc 0%, #f6eef0 100%);
         }
 
         .product-visual.black {
-            background: linear-gradient(145deg, #151515 0%, #313131 55%, #6a5b3b 100%);
+            background:
+                radial-gradient(circle at top, rgba(255, 255, 255, 0.9), transparent 48%),
+                linear-gradient(180deg, #fffafa 0%, #f4ecee 100%);
         }
 
         .product-copy {
             color: #0a0a0a;
+            text-align: left;
         }
 
         .product-kicker {
@@ -521,6 +606,7 @@
             font-size: clamp(2rem, 4vw, 2.8rem);
             line-height: 1.04;
             margin-bottom: 14px;
+            text-wrap: balance;
         }
 
         .product-copy p {
@@ -580,6 +666,30 @@
             color: #7b6a43;
             font-size: 0.92rem;
             font-weight: 600;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border: none;
+            padding: 0;
+            border-radius: 999px;
+            background: rgba(10, 10, 10, 0.18);
+            cursor: pointer;
+            transition: all 0.35s ease;
+        }
+
+        .carousel-dot.is-active {
+            width: 38px;
+            background: linear-gradient(90deg, #C9A84C 0%, #E91E8C 100%);
+            box-shadow: 0 8px 18px rgba(233, 30, 140, 0.28);
         }
 
         .btn-secondary {
@@ -1598,10 +1708,6 @@
                 margin-bottom: 20px;
             }
 
-            .hero-image-container img {
-                width: 250px;
-            }
-
             .colour-selector {
                 gap: 15px;
             }
@@ -1666,6 +1772,13 @@
 
             .carousel-controls {
                 justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .carousel-heading {
+                align-items: center;
+                text-align: center;
             }
 
             .product-card {
@@ -1681,6 +1794,11 @@
             .product-visual {
                 min-height: 320px;
                 padding: 22px;
+            }
+
+            .carousel-progress {
+                left: 20px;
+                right: 20px;
             }
 
             .product-actions {
@@ -1742,6 +1860,11 @@
             .product-card {
                 padding: 20px;
             }
+
+            .product-pages {
+                padding: 14px 14px 24px;
+                border-radius: 24px;
+            }
         }
     </style>
 </head>
@@ -1777,148 +1900,138 @@
         <h1>Salon-Quality Hair.<br>Zero Salon Prices.</h1>
         <p class="subheadline">The AirStyler 5-in-1 — curl, straighten, volumise, wave and smooth — all in one tool.</p>
 
-        <div class="hero-image-container">
-            <img id="hero-image" src="images/airstyler_prodcut_white_001.jpg" alt="AirStyler 5-in-1 Magic Hair Styler - White/Gold">
-        </div>
-
-        <div class="pricing">
-            <span class="original-price">£154.00</span>
-            <span class="sale-price">£49.99</span>
-        </div>
-
-        <div class="colour-selector">
-            <button class="colour-swatch white-gold active" data-product-key="white" data-colour="White/Gold" data-image="images/airstyler_prodcut_white_001.jpg" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="White/Gold"></button>
-            <button class="colour-swatch silver-pink" data-product-key="pink" data-colour="Blush Pink" data-image="images/airstyler_product_pink.jpg" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="Blush Pink"></button>
-            <button class="colour-swatch navy-gold" data-product-key="navy" data-colour="Navy/Gold" data-image="images/airstyler_product_navy.jpg" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="Navy/Gold"></button>
-            <button class="colour-swatch black" data-product-key="black" data-colour="Midnight Black" data-image="images/airstyler_product_black.png" data-stripe="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" title="Midnight Black"></button>
-        </div>
-
-        <div class="trust-badges">
-            <div class="badge">✓ 50,000+ Uses Guaranteed</div>
-            <div class="badge">✓ Safe Certified</div>
-            <div class="badge">✓ Free Worldwide Shipping</div>
-            <div class="badge">✓ Full Refund Guarantee</div>
-        </div>
-
-        <a id="buy-button" href="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" class="btn-primary">Buy Now</a>
-    </section>
-
-    <section class="product-pages" id="shop">
-        <div class="collection-intro">
-            <span class="collection-eyebrow">Shop The Collection</span>
-            <h2>Four finishes. One high-impact styling system.</h2>
-            <p>Browse the four AirStyler finishes in a dedicated carousel, then send shoppers back to the main product flow where they can choose both plug and colour until individual Stripe links are ready.</p>
-            <p class="collection-note">Checkout still happens through the main product button. Plug type and colour selection stay there for now.</p>
-        </div>
-
-        <div class="product-carousel-shell">
-            <div class="carousel-controls" aria-label="Collection carousel controls">
-                <button class="carousel-button" id="carousel-prev" type="button" aria-label="Previous product">‹</button>
-                <button class="carousel-button" id="carousel-next" type="button" aria-label="Next product">›</button>
+        <section class="product-pages" id="shop">
+            <div class="collection-intro">
+                <p class="collection-note">Browse the four finishes here, then choose plug type and colour in the shared checkout flow.</p>
             </div>
 
-            <div class="product-carousel" id="product-carousel">
-            <article class="product-card" id="white-edition">
-                <div class="product-visual white">
-                    <img src="images/airstyler_prodcut_white_001.jpg" alt="White and gold AirStyler product page image">
-                </div>
-                <div class="product-copy">
-                    <span class="product-kicker">Signature Finish</span>
-                    <h3>White / Gold Edition</h3>
-                    <p>The hero finish for the collection: bright, polished, and built to read as premium at first glance. Ideal for the main storefront and paid landing traffic.</p>
-                    <div class="product-meta">
-                        <span class="product-chip">Best Seller</span>
-                        <span class="product-chip">Luxury White Shell</span>
-                        <span class="product-chip">Gold Accent Trim</span>
+            <div class="product-carousel-shell">
+                <div class="carousel-controls" aria-label="Collection carousel controls">
+                    <div class="carousel-heading">
+                        <strong>Hero Collection</strong>
+                        <span>Auto-rotating finishes with manual controls.</span>
                     </div>
-                    <ul class="product-points">
-                        <li>Clean studio look for above-the-fold placement.</li>
-                        <li>Works as the default product variant across the site.</li>
-                        <li>Strong contrast against dark hero backgrounds.</li>
-                    </ul>
-                    <div class="product-actions">
-                        <a href="#top" class="btn-secondary product-jump" data-product-key="white">Preview In Hero</a>
+                    <div class="carousel-button-group">
+                        <button class="carousel-button" id="carousel-prev" type="button" aria-label="Previous product">‹</button>
+                        <button class="carousel-button" id="carousel-next" type="button" aria-label="Next product">›</button>
                     </div>
-                    <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
                 </div>
-            </article>
 
-            <article class="product-card" id="pink-edition">
-                <div class="product-visual pink">
-                    <img src="images/airstyler_product_pink.jpg" alt="Pink AirStyler product page image">
-                </div>
-                <div class="product-copy">
-                    <span class="product-kicker">Soft Glam</span>
-                    <h3>Blush Pink Edition</h3>
-                    <p>A more playful, gifting-friendly finish with softer tones and a beauty-led feel. This variant fits social campaigns, bundles, and seasonal launches.</p>
-                    <div class="product-meta">
-                        <span class="product-chip">Gift Favourite</span>
-                        <span class="product-chip">Blush Body</span>
-                        <span class="product-chip">Campaign Ready</span>
+                <div class="product-track">
+                <div class="product-carousel" id="product-carousel">
+                <article class="product-card is-active" id="white-edition" data-product-key="white">
+                    <div class="product-visual white">
+                        <img id="hero-image" src="images/airstyler_prodcut_white_001.jpg" alt="White and gold AirStyler product page image">
                     </div>
-                    <ul class="product-points">
-                        <li>Built for a softer, editorial product mood.</li>
-                        <li>Pairs well with beauty and gifting messaging.</li>
-                        <li>Keeps the same 5-in-1 feature set and pricing.</li>
-                    </ul>
-                    <div class="product-actions">
-                        <a href="#top" class="btn-secondary product-jump" data-product-key="pink">Preview In Hero</a>
+                    <div class="product-copy">
+                        <span class="product-kicker">Signature Finish</span>
+                        <h3>White / Gold Edition</h3>
+                        <p>The hero finish for the collection: bright, polished, and built to read as premium at first glance. Ideal for the main storefront and paid landing traffic.</p>
+                        <div class="product-meta">
+                            <span class="product-chip">Best Seller</span>
+                            <span class="product-chip">Luxury White Shell</span>
+                            <span class="product-chip">Gold Accent Trim</span>
+                        </div>
+                        <ul class="product-points">
+                            <li>Clean studio look for above-the-fold placement.</li>
+                            <li>Works as the default product variant across the site.</li>
+                            <li>Strong contrast against dark hero backgrounds.</li>
+                        </ul>
+                        <div class="product-actions">
+                            <a href="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" class="btn-primary">Buy Now</a>
+                        </div>
+                        <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
                     </div>
-                    <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
-                </div>
-            </article>
+                </article>
 
-            <article class="product-card" id="navy-edition">
-                <div class="product-visual navy">
-                    <img src="images/airstyler_product_navy.jpg" alt="Navy and gold AirStyler product page image">
-                </div>
-                <div class="product-copy">
-                    <span class="product-kicker">Editorial Contrast</span>
-                    <h3>Navy / Gold Edition</h3>
-                    <p>The most dramatic finish in the range. The navy body and warm metallic accents give the collection a darker, high-contrast option for premium merchandising.</p>
-                    <div class="product-meta">
-                        <span class="product-chip">Premium Contrast</span>
-                        <span class="product-chip">Navy Finish</span>
-                        <span class="product-chip">Gold Detailing</span>
+                <article class="product-card" id="pink-edition" data-product-key="pink">
+                    <div class="product-visual pink">
+                        <img src="images/airstyler_product_pink.jpg" alt="Pink AirStyler product page image">
                     </div>
-                    <ul class="product-points">
-                        <li>Excellent for darker campaign layouts and seasonal drops.</li>
-                        <li>Creates the strongest visual separation from the core white SKU.</li>
-                        <li>Reads clearly in card layouts and comparison modules.</li>
-                    </ul>
-                    <div class="product-actions">
-                        <a href="#top" class="btn-secondary product-jump" data-product-key="navy">Preview In Hero</a>
+                    <div class="product-copy">
+                        <span class="product-kicker">Soft Glam</span>
+                        <h3>Blush Pink Edition</h3>
+                        <p>A more playful, gifting-friendly finish with softer tones and a beauty-led feel. This variant fits social campaigns, bundles, and seasonal launches.</p>
+                        <div class="product-meta">
+                            <span class="product-chip">Gift Favourite</span>
+                            <span class="product-chip">Blush Body</span>
+                            <span class="product-chip">Campaign Ready</span>
+                        </div>
+                        <ul class="product-points">
+                            <li>Built for a softer, editorial product mood.</li>
+                            <li>Pairs well with beauty and gifting messaging.</li>
+                            <li>Keeps the same 5-in-1 feature set and pricing.</li>
+                        </ul>
+                        <div class="product-actions">
+                            <a href="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" class="btn-primary">Buy Now</a>
+                        </div>
+                        <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
                     </div>
-                    <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
-                </div>
-            </article>
+                </article>
 
-            <article class="product-card" id="black-edition">
-                <div class="product-visual black">
-                    <img src="images/airstyler_product_black.png" alt="Black AirStyler product page image">
-                </div>
-                <div class="product-copy">
-                    <span class="product-kicker">Minimal Performance</span>
-                    <h3>Midnight Black Edition</h3>
-                    <p>The sharpest, most technical-looking option in the line. It suits direct-response creative, unisex styling campaigns, and customers who prefer a cleaner industrial finish.</p>
-                    <div class="product-meta">
-                        <span class="product-chip">Stealth Finish</span>
-                        <span class="product-chip">Studio Black</span>
-                        <span class="product-chip">Performance Look</span>
+                <article class="product-card" id="navy-edition" data-product-key="navy">
+                    <div class="product-visual navy">
+                        <img src="images/airstyler_product_navy.jpg" alt="Navy and gold AirStyler product page image">
                     </div>
-                    <ul class="product-points">
-                        <li>Strong fit for sleek brand treatments and dark-mode ads.</li>
-                        <li>Offers a more neutral option without changing the hardware.</li>
-                        <li>Uses the same heat, ceramic, and dual-voltage system.</li>
-                    </ul>
-                    <div class="product-actions">
-                        <a href="#top" class="btn-secondary product-jump" data-product-key="black">Preview In Hero</a>
+                    <div class="product-copy">
+                        <span class="product-kicker">Editorial Contrast</span>
+                        <h3>Navy / Gold Edition</h3>
+                        <p>The most dramatic finish in the range. The navy body and warm metallic accents give the collection a darker, high-contrast option for premium merchandising.</p>
+                        <div class="product-meta">
+                            <span class="product-chip">Premium Contrast</span>
+                            <span class="product-chip">Navy Finish</span>
+                            <span class="product-chip">Gold Detailing</span>
+                        </div>
+                        <ul class="product-points">
+                            <li>Excellent for darker campaign layouts and seasonal drops.</li>
+                            <li>Creates the strongest visual separation from the core white SKU.</li>
+                            <li>Reads clearly in card layouts and comparison modules.</li>
+                        </ul>
+                        <div class="product-actions">
+                            <a href="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" class="btn-primary">Buy Now</a>
+                        </div>
+                        <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
                     </div>
-                    <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
+                </article>
+
+                <article class="product-card" id="black-edition" data-product-key="black">
+                    <div class="product-visual black">
+                        <img src="images/airstyler_product_black.png" alt="Black AirStyler product page image">
+                    </div>
+                    <div class="product-copy">
+                        <span class="product-kicker">Minimal Performance</span>
+                        <h3>Midnight Black Edition</h3>
+                        <p>The sharpest, most technical-looking option in the line. It suits direct-response creative, unisex styling campaigns, and customers who prefer a cleaner industrial finish.</p>
+                        <div class="product-meta">
+                            <span class="product-chip">Stealth Finish</span>
+                            <span class="product-chip">Studio Black</span>
+                            <span class="product-chip">Performance Look</span>
+                        </div>
+                        <ul class="product-points">
+                            <li>Strong fit for sleek brand treatments and dark-mode ads.</li>
+                            <li>Offers a more neutral option without changing the hardware.</li>
+                            <li>Uses the same heat, ceramic, and dual-voltage system.</li>
+                        </ul>
+                        <div class="product-actions">
+                            <a href="https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800" class="btn-primary">Buy Now</a>
+                        </div>
+                        <p class="product-status">Colour and plug are selected in the shared checkout flow.</p>
+                    </div>
+                </article>
                 </div>
-            </article>
+                    <div class="carousel-progress" aria-hidden="true">
+                        <div class="carousel-progress-bar" id="carousel-progress-bar"></div>
+                    </div>
+                </div>
+                <div class="carousel-dots" id="carousel-dots" aria-label="Carousel slide selectors">
+                    <button class="carousel-dot is-active" type="button" data-slide="0" aria-label="Show White / Gold Edition"></button>
+                    <button class="carousel-dot" type="button" data-slide="1" aria-label="Show Blush Pink Edition"></button>
+                    <button class="carousel-dot" type="button" data-slide="2" aria-label="Show Navy / Gold Edition"></button>
+                    <button class="carousel-dot" type="button" data-slide="3" aria-label="Show Midnight Black Edition"></button>
+                </div>
             </div>
-        </div>
+        </section>
+
     </section>
 
     <!-- Features Section -->
@@ -2084,10 +2197,10 @@
     <section class="lifestyle">
         <div class="lifestyle-container">
             <div class="lifestyle-image">
-                <img src="images/airstyler_product_navy.jpg" alt="Navy and gold AirStyler product image">
+                <img src="images/08_gallery_1ea6bff73c3d.jpg" alt="AirStyler product specifications gallery image">
             </div>
             <div class="lifestyle-image">
-                <img src="images/airstyler_product_pink.jpg" alt="Pink AirStyler product image">
+                <img src="images/08_gallery_b573d241e220.jpg" alt="AirStyler product detail gallery image">
             </div>
         </div>
     </section>
@@ -2442,28 +2555,75 @@
 
         // Colour Swatch Interaction
         const colourSwatches = document.querySelectorAll('.colour-swatch');
-        const heroImage = document.getElementById('hero-image');
-        const buyButton = document.getElementById('buy-button');
         const buyButtonCta = document.getElementById('buy-button-cta');
-        const productJumpButtons = document.querySelectorAll('.product-jump');
         const productCarousel = document.getElementById('product-carousel');
+        const productSlides = Array.from(document.querySelectorAll('.product-card'));
+        const carouselDots = Array.from(document.querySelectorAll('.carousel-dot'));
+        const carouselProgressBar = document.getElementById('carousel-progress-bar');
         const carouselPrev = document.getElementById('carousel-prev');
         const carouselNext = document.getElementById('carousel-next');
+        let currentProductIndex = 0;
+        let carouselAutoScroll = null;
+
+        function updateCarouselUi(index) {
+            productSlides.forEach((slide, slideIndex) => {
+                slide.classList.toggle('is-active', slideIndex === index);
+            });
+
+            carouselDots.forEach((dot, dotIndex) => {
+                dot.classList.toggle('is-active', dotIndex === index);
+            });
+
+            if (carouselProgressBar) {
+                carouselProgressBar.style.transform = `scaleX(${(index + 1) / productSlides.length})`;
+            }
+        }
+
+        function goToProductSlide(index, smooth = true) {
+            if (!productCarousel || !productSlides.length) {
+                return;
+            }
+
+            currentProductIndex = (index + productSlides.length) % productSlides.length;
+            const slideWidth = productCarousel.clientWidth;
+            productCarousel.scrollTo({
+                left: slideWidth * currentProductIndex,
+                behavior: smooth ? 'smooth' : 'auto'
+            });
+            updateCarouselUi(currentProductIndex);
+        }
+
+        function startCarouselAutoScroll() {
+            if (!productCarousel || productSlides.length < 2) {
+                return;
+            }
+
+            window.clearInterval(carouselAutoScroll);
+            carouselAutoScroll = window.setInterval(() => {
+                goToProductSlide(currentProductIndex + 1);
+            }, 4200);
+        }
+
+        function stopCarouselAutoScroll() {
+            window.clearInterval(carouselAutoScroll);
+        }
 
         function applyProductSelection(sourceSwatch) {
             const productKey = sourceSwatch.getAttribute('data-product-key');
-            const newImage = sourceSwatch.getAttribute('data-image');
-            const colour = sourceSwatch.getAttribute('data-colour');
             const stripeLink = sourceSwatch.getAttribute('data-stripe');
+            const matchingIndex = productSlides.findIndex(slide => slide.getAttribute('data-product-key') === productKey);
 
             colourSwatches.forEach(swatch => {
                 swatch.classList.toggle('active', swatch.getAttribute('data-product-key') === productKey);
             });
 
-            heroImage.src = newImage;
-            heroImage.alt = `AirStyler 5-in-1 Magic Hair Styler - ${colour}`;
-            buyButton.href = stripeLink;
-            buyButtonCta.href = stripeLink;
+            if (matchingIndex >= 0) {
+                goToProductSlide(matchingIndex);
+            }
+
+            if (buyButtonCta) {
+                buyButtonCta.href = stripeLink;
+            }
         }
 
         colourSwatches.forEach(swatch => {
@@ -2472,44 +2632,39 @@
             });
         });
 
-        productJumpButtons.forEach(button => {
-            button.addEventListener('click', function(event) {
-                const productKey = this.getAttribute('data-product-key');
-                const linkedSwatch = document.querySelector(`.colour-swatch[data-product-key="${productKey}"]`);
-
-                if (!linkedSwatch) {
-                    return;
-                }
-
-                event.preventDefault();
-                applyProductSelection(linkedSwatch);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        });
-
-        function scrollProductCarousel(direction) {
-            if (!productCarousel) {
-                return;
-            }
-
-            const slideWidth = productCarousel.clientWidth + 24;
-            productCarousel.scrollBy({
-                left: slideWidth * direction,
-                behavior: 'smooth'
-            });
-        }
-
         if (carouselPrev) {
             carouselPrev.addEventListener('click', function() {
-                scrollProductCarousel(-1);
+                stopCarouselAutoScroll();
+                goToProductSlide(currentProductIndex - 1);
+                startCarouselAutoScroll();
             });
         }
 
         if (carouselNext) {
             carouselNext.addEventListener('click', function() {
-                scrollProductCarousel(1);
+                stopCarouselAutoScroll();
+                goToProductSlide(currentProductIndex + 1);
+                startCarouselAutoScroll();
             });
         }
+
+        carouselDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                stopCarouselAutoScroll();
+                goToProductSlide(Number(this.getAttribute('data-slide')));
+                startCarouselAutoScroll();
+            });
+        });
+
+        if (productCarousel) {
+            productCarousel.addEventListener('mouseenter', stopCarouselAutoScroll);
+            productCarousel.addEventListener('mouseleave', startCarouselAutoScroll);
+            productCarousel.addEventListener('touchstart', stopCarouselAutoScroll, { passive: true });
+            productCarousel.addEventListener('touchend', startCarouselAutoScroll, { passive: true });
+        }
+
+        goToProductSlide(0, false);
+        startCarouselAutoScroll();
 
         // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
