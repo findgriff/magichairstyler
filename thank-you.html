@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for your order. Your AirStyler is on its way.">
+    <meta name="theme-color" content="#0e0c0b">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Order confirmed — Magic Hair Styler</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e0c0b'/%3E%3Ctext y='46' x='32' text-anchor='middle' font-family='Georgia' font-weight='700' font-size='40' fill='%23C9A84C'%3EM%3C/text%3E%3C/svg%3E">
+
+    <style>
+        :root {
+            --bg: #fff9f4; --ink: #0e0c0b; --ink-soft: #3a3431; --muted: #6d6560;
+            --line: #ead9c4; --accent: #b98d2b; --pink: #d61e77; --success: #1f7a4b;
+            --shadow: 0 20px 40px -18px rgba(14,12,11,0.22); --radius: 18px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; line-height: 1.15; }
+        a { color: inherit; }
+        .container { max-width: 640px; margin: 0 auto; padding: 60px 20px 80px; text-align: center; }
+        .tick { width: 72px; height: 72px; margin: 0 auto 24px; border-radius: 50%; background: var(--success); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 28px -12px rgba(31,122,75,0.55); }
+        .tick svg { width: 36px; height: 36px; color: #fff; }
+        h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin-bottom: 10px; }
+        .lede { color: var(--muted); font-size: 1.05rem; margin-bottom: 32px; }
+        .order-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; margin-bottom: 24px; text-align: left; }
+        .order-card h2 { font-size: 1.2rem; margin-bottom: 14px; }
+        .order-card .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.95rem; }
+        .order-card .row:last-child { border-bottom: 0; }
+        .order-card .row strong { color: var(--ink); font-weight: 600; }
+        .order-card .row .value { font-family: 'Inter', sans-serif; }
+        .order-card .row.total { padding-top: 14px; font-size: 1rem; font-weight: 600; color: var(--ink); }
+        .order-card .row.total strong { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; }
+        .help { color: var(--muted); font-size: 0.92rem; margin-bottom: 24px; }
+        .help strong { color: var(--ink); }
+        .btn { display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: #fff; padding: 14px 24px; border-radius: 10px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.2s ease; }
+        .btn:hover { background: var(--pink); }
+        footer { color: var(--muted); font-size: 0.82rem; text-align: center; padding: 20px; }
+        .skeleton { color: var(--muted); font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="tick" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h1>Thank you — your order is in!</h1>
+        <p class="lede" id="lede">Your AirStyler is being prepared for dispatch.</p>
+
+        <div class="order-card" id="order-card" aria-live="polite">
+            <h2>Order details</h2>
+            <div id="order-body">
+                <p class="skeleton">Loading your order…</p>
+            </div>
+        </div>
+
+        <p class="help">
+            We've sent a receipt to <strong id="email-inline">your email</strong>. If you have any questions, reply to that email
+            or get in touch at <a href="mailto:magichairstyler@aressentinel.com">magichairstyler@aressentinel.com</a>.
+        </p>
+
+        <a href="/" class="btn">
+            Back to home
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+    </main>
+
+    <footer>© Ares Sentinel Limited trading as Magic Hair Styler &nbsp;·&nbsp; <a href="/">magichairstyler.com</a></footer>
+
+    <script>
+        (function () {
+            function qs(key) {
+                var m = new RegExp('[?&]' + key + '=([^&]+)').exec(window.location.search);
+                return m ? decodeURIComponent(m[1]) : '';
+            }
+            function money(pence, currency) {
+                if (typeof pence !== 'number') return '';
+                var n = (pence / 100).toFixed(2);
+                var symbol = (currency || 'gbp').toLowerCase() === 'gbp' ? '£' :
+                             (currency || '').toLowerCase() === 'usd' ? '$' :
+                             (currency || '').toLowerCase() === 'eur' ? '€' : '';
+                return symbol + n;
+            }
+            function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]; }); }
+
+            var sid = qs('session_id');
+            var body = document.getElementById('order-body');
+
+            if (!sid) {
+                body.innerHTML = '<p class="skeleton">We couldn\'t find your session. If you were charged, please email <a href="mailto:magichairstyler@aressentinel.com">support</a> with your receipt.</p>';
+                return;
+            }
+
+            fetch('/api/session?session_id=' + encodeURIComponent(sid))
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    if (data.error) throw new Error(data.error);
+                    var paid = data.payment_status === 'paid' || data.status === 'complete';
+                    if (!paid) {
+                        body.innerHTML = '<p class="skeleton">Your payment is still being processed. We\'ll email you as soon as it\'s confirmed.</p>';
+                        return;
+                    }
+                    var finish = (data.metadata || {}).finish_label || (data.metadata || {}).finish || '';
+                    var email = data.customer_email || '';
+                    if (email) {
+                        document.getElementById('email-inline').textContent = email;
+                    }
+                    body.innerHTML =
+                        '<div class="row"><span>Order reference</span><span class="value">' + esc(data.id || '') + '</span></div>' +
+                        '<div class="row"><span>Product</span><span class="value">AirStyler 5-in-1 Magic Hair Styler</span></div>' +
+                        (finish ? '<div class="row"><span>Finish</span><span class="value"><strong>' + esc(finish) + '</strong></span></div>' : '') +
+                        '<div class="row"><span>Email</span><span class="value">' + esc(email) + '</span></div>' +
+                        '<div class="row total"><span>Total paid</span><strong>' + esc(money(data.amount_total, data.currency)) + '</strong></div>';
+                })
+                .catch(function (err) {
+                    body.innerHTML = '<p class="skeleton">We couldn\'t load your order details right now, but your payment has gone through. We\'ll email a full receipt shortly.</p>';
+                    console.error('[thank-you] retrieve failed', err);
+                });
+        })();
+    </script>
+</body>
+</html>
