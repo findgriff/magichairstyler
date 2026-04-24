@@ -1,12 +1,12 @@
 FROM nginx:alpine
 
-# Copy the HTML file to the nginx web root
+# Site assets
 COPY index.html /usr/share/nginx/html/index.html
-
-# Copy images directory
+COPY robots.txt /usr/share/nginx/html/robots.txt
+COPY sitemap.xml /usr/share/nginx/html/sitemap.xml
 COPY images/ /usr/share/nginx/html/images/
 
-# Expose port 80
-EXPOSE 80
+# Nginx: gzip, long-cache static assets, security headers
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# The default CMD from the nginx:alpine image is already set to start nginx
+EXPOSE 80

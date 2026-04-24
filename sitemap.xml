@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://magichairstyler.com/</loc>
+        <lastmod>2026-04-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://magichairstyler.com/images/Magic_hair_styler_001.webp</image:loc>
+            <image:title>AirStyler 5-in-1 — voluminous curls</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://magichairstyler.com/images/Magic_hair_styler_002.webp</image:loc>
+            <image:title>AirStyler 5-in-1 — silky smooth</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://magichairstyler.com/images/Magic_hair_styler_004.webp</image:loc>
+            <image:title>AirStyler 5-in-1 — beach waves</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://magichairstyler.com/images/Magic_hair_003.webp</image:loc>
+            <image:title>AirStyler 5-in-1 — root lift and volume</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://magichairstyler.com/images/airstyler_prodcut_white_001.webp</image:loc>
+            <image:title>AirStyler White &amp; Gold Edition</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://magichairstyler.com/images/airstyler_product_pink.webp</image:loc>
+            <image:title>AirStyler Blush Pink Edition</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://magichairstyler.com/images/airstyler_product_navy.webp</image:loc>
+            <image:title>AirStyler Navy &amp; Gold Edition</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://magichairstyler.com/images/airstyler_product_black.webp</image:loc>
+            <image:title>AirStyler Midnight Black Edition</image:title>
+        </image:image>
+    </url>
+</urlset>
