@@ -927,7 +927,11 @@
     </script>
 
     <script>
-        // Finish selector
+        // Shared: currently selected finish, updated by the swatch widget
+        // and read by every Stripe CTA on the page.
+        var mhsSelectedFinish = 'white';
+
+        // Finish selector widget
         (function () {
             var swatches = document.querySelectorAll('.swatch');
             var img = document.getElementById('finish-image');
@@ -941,6 +945,7 @@
                     swatches.forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-checked', 'false'); });
                     s.classList.add('active');
                     s.setAttribute('aria-checked', 'true');
+                    mhsSelectedFinish = s.getAttribute('data-key') || 'white';
                     if (img) img.src = s.getAttribute('data-image');
                     if (img) img.alt = 'AirStyler 5-in-1 in ' + s.getAttribute('data-name');
                     if (nameEl) nameEl.innerHTML = s.getAttribute('data-name');
@@ -957,6 +962,69 @@
                         arr[next].focus();
                         arr[next].click();
                     }
+                });
+            });
+        })();
+
+        // Checkout: every link pointing at buy.stripe.com is upgraded to POST
+        // to /api/checkout, which creates a Stripe Checkout Session with the
+        // selected finish as metadata + a forced confirmation dropdown. On any
+        // failure we fall back to the original Stripe Payment Link so the
+        // customer is never stranded.
+        (function () {
+            var FALLBACK_URL = 'https://buy.stripe.com/5kQ5kD97K1nM97dh0Ecs800';
+            var buttons = document.querySelectorAll('a[href*="buy.stripe.com"]');
+
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    // Let cmd/ctrl/middle-click through (open in new tab) — fall
+                    // through to the fallback Payment Link so power-users are
+                    // never intercepted.
+                    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) {
+                        return;
+                    }
+                    e.preventDefault();
+                    if (btn.dataset.mhsBusy === '1') return;
+                    btn.dataset.mhsBusy = '1';
+
+                    var original = btn.innerHTML;
+                    btn.setAttribute('aria-busy', 'true');
+                    btn.style.opacity = '0.7';
+                    btn.style.pointerEvents = 'none';
+                    btn.innerHTML = 'Opening secure checkout…';
+
+                    var finish = (btn.getAttribute('data-finish') || mhsSelectedFinish || 'white').toLowerCase();
+
+                    var timeoutId = setTimeout(function () {
+                        // Hard timeout: if the endpoint takes >8 seconds, send
+                        // the customer through the fallback Payment Link rather
+                        // than leaving them staring at a spinner.
+                        window.location.href = FALLBACK_URL;
+                    }, 8000);
+
+                    fetch('/api/checkout', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ finish: finish })
+                    })
+                        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+                        .then(function (resp) {
+                            clearTimeout(timeoutId);
+                            if (resp.ok && resp.body && resp.body.url) {
+                                window.location.href = resp.body.url;
+                                return;
+                            }
+                            throw new Error((resp.body && resp.body.error) || 'checkout-failed');
+                        })
+                        .catch(function () {
+                            clearTimeout(timeoutId);
+                            btn.innerHTML = original;
+                            btn.style.opacity = '';
+                            btn.style.pointerEvents = '';
+                            btn.removeAttribute('aria-busy');
+                            btn.dataset.mhsBusy = '';
+                            window.location.href = FALLBACK_URL;
+                        });
                 });
             });
         })();

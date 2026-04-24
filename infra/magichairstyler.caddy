@@ -1,0 +1,55 @@
+www.magichairstyler.com {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
+    redir https://magichairstyler.com{uri} permanent
+}
+
+magichairstyler.com {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
+
+    encode zstd gzip
+
+    header {
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "SAMEORIGIN"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "interest-cohort=()"
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        -Server
+    }
+
+    @static {
+        path *.webp *.png *.jpg *.jpeg *.gif *.svg *.ico *.woff *.woff2 *.ttf *.eot
+    }
+    header @static Cache-Control "public, max-age=2592000, immutable"
+
+    @textual {
+        path *.html *.xml / *.txt
+    }
+    header @textual Cache-Control "public, max-age=600"
+
+    # Checkout API — reverse-proxied to the Python service on 127.0.0.1:8095
+    handle /api/* {
+        reverse_proxy 127.0.0.1:8095 {
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+        }
+    }
+
+    # Static site
+    handle {
+        root * /var/www/magichairstyler.com
+        try_files {path} {path}.html {path}/index.html
+        file_server
+    }
+
+    handle_errors {
+        rewrite * /50x.html
+        root * /var/www/magichairstyler.com
+        file_server
+    }
+}
